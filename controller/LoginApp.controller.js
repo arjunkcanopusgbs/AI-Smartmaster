@@ -1,27 +1,22 @@
 sap.ui.define([
-    "sap/ui/core/mvc/Controller"
-], function (Controller) {
+    "sap/ui/core/mvc/Controller",
+    "sap/m/MessageToast"
+], function(Controller, MessageToast) {
     "use strict";
 
     return Controller.extend("LoginApp.controller.Login", {
-        onLoginPress: function () {
-            var oUsernameInput = this.byId("usernameInput");
-            var oPasswordInput = this.byId("passwordInput");
+        onLoginPress: function() {
+            var oView = this.getView();
+            var sUsername = oView.byId("usernameInput").getValue();
+            var sPassword = oView.byId("passwordInput").getValue();
 
-            var sUsername = oUsernameInput.getValue();
-            var sPassword = oPasswordInput.getValue();
-
-            // For demonstration purposes, log the values.
-            // In a real application, you would send these to a backend for authentication.
-            console.log("Username:", sUsername);
-            console.log("Password:", sPassword);
-
-            // You can add further logic here, e.g., show a message toast,
-            // navigate to another page, or call an authentication service.
             if (sUsername && sPassword) {
-                sap.m.MessageToast.show("Attempting to log in with username: " + sUsername);
+                // For demonstration purposes, just log the values and show a toast
+                console.log("Username:", sUsername);
+                console.log("Password:", sPassword);
+                MessageToast.show("Attempting to log in with user: " + sUsername);
             } else {
-                sap.m.MessageToast.show("Please enter both username and password.");
+                MessageToast.show("Please enter both username and password.");
             }
         }
     });
