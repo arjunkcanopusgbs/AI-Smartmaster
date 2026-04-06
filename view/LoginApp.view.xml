@@ -1,0 +1,31 @@
+<mvc:View
+    controllerName="LoginApp.controller.Login"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page
+        title="Login"
+        class="sapUiContentPadding">
+        <content>
+            <VBox
+                alignItems="Center"
+                justifyContent="Center"
+                class="sapUiSmallMargin">
+                <Input
+                    id="usernameInput"
+                    placeholder="Username"
+                    width="20em"
+                    class="sapUiSmallMarginBottom"/>
+                <Input
+                    id="passwordInput"
+                    placeholder="Password"
+                    type="Password"
+                    width="20em"
+                    class="sapUiSmallMarginBottom"/>
+                <Button
+                    text="Login"
+                    type="Emphasized"
+                    press="onLoginPress"/>
+            </VBox>
+        </content>
+    </Page>
+</mvc:View>
