@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="com.myorg.app.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <App id="app">
+        <pages>
+            <Page id="page" title="{i18n>appTitle}">
+                <content>
+                    <VBox justifyContent="Center" alignItems="Center" height="100%">
+                        <Text text="Hello Naidu" id="helloText"/>
+                        <Button text="hello" press="onHelloPress" id="helloButton"/>
+                    </VBox>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

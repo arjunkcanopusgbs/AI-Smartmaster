@@ -1,0 +1,30 @@
+_schema-version: "3.2"
+ID: com.myorg.app
+version: 0.0.1
+modules:
+  - name: com-myorg-app-content-deployer
+    type: com.sap.application.content
+    path: .
+    requires:
+      - name: com-myorg-app-repo-host
+        parameters:
+          content-target: true
+  - name: com-myorg-app-router
+    type: approuter.nodejs
+    path: webapp
+    parameters:
+      keep-existing-routes: true
+    requires:
+      - name: uaa_com-myorg-app
+resources:
+  - name: com-myorg-app-repo-host
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: html5-apps-repo
+      service-plan: app-host
+  - name: uaa_com-myorg-app
+    type: org.cloudfoundry.managed-service
+    parameters:
+      path: ./xs-security.json
+      service: xsuaa
+      service-plan: application

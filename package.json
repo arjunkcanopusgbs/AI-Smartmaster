@@ -1,0 +1,12 @@
+{
+  "name": "com.myorg.app",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "ui5 serve --config=ui5.yaml",
+    "build": "ui5 build --clean-dest --include-all-dependencies"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3.0.0",
+    "@sap/ux-ui5-tooling": "1"
+  }
+}

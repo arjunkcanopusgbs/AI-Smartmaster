@@ -1,0 +1,9 @@
+specVersion: "3.0"
+metadata:
+  name: com.myorg.app
+type: application
+builder:
+  resources:
+    excludes:
+      - "/test/**"
+      - "/localService/**"
